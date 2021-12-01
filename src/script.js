@@ -8,6 +8,7 @@ const button = searchDiv.querySelector('button');
 const head = document.querySelector('#head');
 
 const loader = document.querySelector('#loader');
+const weatherLoader = document.querySelector('#weather-loader');
 
 const cityName = resultDiv.querySelector('h1');
 const cityTemp = resultDiv.querySelector('h3');
@@ -25,6 +26,7 @@ let objWeather =undefined;
 //Results
 function outputResult(){
     mainDiv.hidden = true;
+    weatherLoader.hidden = false;
     resultDiv.classList.add('resultDiv')
         resultDiv.classList.add('animate__animated', 'animate__fadeInUp')
     cityName.innerHTML = `${objWeather.name}<sup class="country">${objWeather.sys.country}</sup>`;
@@ -36,6 +38,7 @@ function outputResult(){
         divImg.classList.add('animate__animated', 'animate__fadeInUp');
     mainDiv.hidden = false;
     loader.hidden = true;
+    weatherLoader.hidden = true;
 }
 
 
@@ -57,8 +60,6 @@ async function getWeather(apiUrl){
         outputResult();
     } catch (error) {
         //Alert Error
-        resultDiv.classList.remove('resultDiv');
-        resultDiv.innerHTML = '';
         alert(`Please check your City name`);
         loader.hidden = true;
     }
@@ -68,13 +69,13 @@ async function getWeather(apiUrl){
 button.addEventListener('click', getCityName);
 
 //scroll
-window.addEventListener('scroll', ()=>{
-    if(window.innerHeight + window.scrollY >= document.body.offsetHeight - 2000){
-        head.classList.add('animate__animated', 'animate__fadeOutUp')
-        mainDiv.style.margin='30px 0 0 0';
+// window.addEventListener('scroll', ()=>{
+//     if(window.innerHeight + window.scrollY >= document.body.offsetHeight - 2000){
+//         head.classList.add('animate__animated', 'animate__fadeOutUp')
+//         mainDiv.style.margin='30px 0 0 0';
 
-    }
-})
+//     }
+// })
 //on Load
 window.onload = function(){
     loader.hidden = false;

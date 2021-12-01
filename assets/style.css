@@ -129,30 +129,66 @@ body{
     font-family: 'Montserrat', sans-serif;
 }
 /* Responsive */
-@media screen and (max-width:1024px) {
-    .search input{
-        width: 50%;
+
+/* @media screen and (max-width:769px) {
+    body{
+        flex-direction: column;
     }
-}
-@media screen and (max-width:769px) {
     #root{
         flex-direction: column;
-        margin-top: 300px;
+        margin-top: 70px;
+    }
+    #head{
+        font-size: 1.1rem;
+        position: relative;
     }
     .resultDiv{
         margin-top: 60px;
         margin-bottom: 60px;
     }
     .search input{
-        width: unset;
+        width: 80%;
     }
 }
 @media screen and (max-width:480px) {
+    body{
+        flex-direction: column;
+    }
     #head{
         font-size: 1.5rem;
+        position: relative;
     }
     .search{
         margin: 10px;
         width: 80%;
+    }
+} */
+@media screen and (max-width:770px){
+    body{
+        flex-direction: column;
+        justify-content: space-evenly;
+    }
+    #head{
+        position: relative;
+        font-size: 1.5rem;
+    }
+    .container{
+        flex-direction: column;
+    }
+    .resultDiv{
+        margin-top: 30px;
+    }
+}
+@media screen and (max-width:482px) {
+    .container{
+        margin: 80px 0px 30px 20px;
+    }
+}
+@media screen and(max-width:320px) {
+    .search{
+        width: 90%;
+    }
+    .search input{
+        width: 70%;
     }
 }
