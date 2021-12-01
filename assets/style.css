@@ -129,66 +129,38 @@ body{
     font-family: 'Montserrat', sans-serif;
 }
 /* Responsive */
-
-/* @media screen and (max-width:769px) {
+@media screen and (max-width:770px) {
     body{
         flex-direction: column;
-    }
-    #root{
-        flex-direction: column;
-        margin-top: 70px;
+        justify-content: flex-start;
     }
     #head{
-        font-size: 1.1rem;
-        position: relative;
-    }
-    .resultDiv{
-        margin-top: 60px;
-        margin-bottom: 60px;
-    }
-    .search input{
-        width: 80%;
-    }
-}
-@media screen and (max-width:480px) {
-    body{
-        flex-direction: column;
-    }
-    #head{
-        font-size: 1.5rem;
-        position: relative;
-    }
-    .search{
-        margin: 10px;
-        width: 80%;
-    }
-} */
-@media screen and (max-width:770px){
-    body{
-        flex-direction: column;
-        justify-content: space-evenly;
-    }
-    #head{
-        position: relative;
-        font-size: 1.5rem;
+        position: static;
+        margin: 60px  0px;
     }
     .container{
         flex-direction: column;
     }
     .resultDiv{
-        margin-top: 30px;
+        margin:60px 0px ;
     }
 }
-@media screen and (max-width:482px) {
-    .container{
-        margin: 80px 0px 30px 20px;
+@media screen and (max-width:604px) {
+    #head{
+        font-size: 1.9rem;
     }
 }
-@media screen and(max-width:320px) {
+@media screen and (max-width:455px) {
+    #head{
+        margin-left: 20px;
+    }
     .search{
-        width: 90%;
-    }
+        width: 80%;
+    } 
+}
+@media screen and (max-width:377px) {
     .search input{
-        width: 70%;
+        width: 50%;
     }
+    
 }

@@ -45,10 +45,10 @@ function outputResult(){
 // Button
 function getCityName(){
     loader.hidden = false;
+    mainDiv.hidden = true;
     let inputValue = input.value;
     let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${inputValue}&appid=${apiKey}`;
     getWeather(apiUrl);
-    mainDiv.hidden = true;
 }
 
 // Get Weather
@@ -68,15 +68,6 @@ async function getWeather(apiUrl){
 //Button
 button.addEventListener('click', getCityName);
 
-//scroll
-// window.addEventListener('scroll', ()=>{
-//     if(window.innerHeight + window.scrollY >= document.body.offsetHeight - 2000){
-//         head.classList.add('animate__animated', 'animate__fadeOutUp')
-//         mainDiv.style.margin='30px 0 0 0';
-
-//     }
-// })
-//on Load
 window.onload = function(){
     loader.hidden = false;
     mainDiv.hidden = true;
