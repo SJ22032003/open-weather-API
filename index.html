@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather</title>
+    <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+  />
+    <link rel="stylesheet" href="assets/style.css">
+    <link rel="shortcut icon" href="assets/img-assets/favicon.png" type="image/x-icon">
+    <style>
+        *{
+            margin: 0%;
+            padding: 0%;
+            box-sizing: border-box;
+        }
+    </style>
+</head>
+<body>
+    <!-- Heading -->
+    <div id="head" class="head">
+        <h1>Simple Weather</h1>
+    </div>
+    <!-- Main Container -->
+    <div id="root" class="container" hidden>
+        <!-- Search -->
+        <div class="search" id="search">
+            <h2>Check Here</h2>
+            <input type="text" placeholder="search"></input>
+            <button>Enter</button>
+        </div>
+        <!-- results -->
+        <div id="result">
+            <h1></h1>
+            <h3></h3>
+            <div class="weather-img" id="weather-img">
+                <!-- <img src="assets/weather-img/rain.svg" alt="" srcset=""> -->
+            </div>
+            <p></p>
+        </div>
+    </div>
+    <!-- Loader -->
+    <div class="loader" id="loader" hidden>
+        <img src="assets/img-assets/loading.svg" alt="loading" srcset="">
+    </div>
+
+<script src="src/script.js"></script>
+<noscript><h1>JS disabled</h1></noscript>
+</body>
+</html>
