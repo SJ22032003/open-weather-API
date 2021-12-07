@@ -39,6 +39,7 @@ body{
     align-items: center;
     width: 100%;
     height: fit-content;
+    overflow: hidden;
 }
 /* Search */
 .search h2{
