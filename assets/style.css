@@ -82,11 +82,11 @@ body{
 /* Result */
 .resultDiv{
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     justify-content: space-between;
     background-color: white;
     color: black;
-    height: 396px;
+    height: fit-content;
     border-radius: 10px;
     width: 260px;
     box-shadow: 12px 15px 0px -4px #52617b;
@@ -94,7 +94,7 @@ body{
 .resultDiv h1{
     margin: 30px 0px 0px 30px;
     font-family: 'Poppins', sans-serif;
-    font-size: 2rem;
+    font-size: 1.5rem;
     color: #6f7b91;
 }
 .resultDiv h3{
@@ -128,6 +128,60 @@ body{
     font-size: 9px;
     font-family: 'Montserrat', sans-serif;
 }
+.moreresult{
+    cursor: pointer;
+}
+.moreresult img:hover{
+    filter: brightness(120%);
+}
+.moreresult img:active{
+    transform: translateY(3px);
+}
+.lessresult{
+    cursor: pointer;
+}
+.lessresult img:hover{
+    filter: brightness(120%);
+}
+.lessresult img:active{
+    transform: translateY(3px);
+}
+.inputlessforecast{
+    -webkit-transition: width 1s ease-in-out;
+    -moz-transition: width 1s ease-in-out;
+    -o-transition: width 1s ease-in-out;
+    transition: width 1s ease-in-out;
+
+    width: 260px;
+}
+.forecast{
+    justify-content: flex-start;
+    -webkit-transition: width 0.3s ease-in-out;
+    -moz-transition: width 0.3s ease-in-out;
+    -o-transition: width 0.3s ease-in-out;
+    transition: width 0.3s ease-in-out;
+
+    width:800px;
+}
+.forecastDiv{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+.resultDivforcast{
+    display: flex;
+    justify-content: space-evenly;
+    width: 80%;
+}
+.resultDivforcast h2{
+    margin: 30px 0px 0px 30px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.3rem;
+    color: #3f4755;
+}
+.resultDivforcast img{
+    width: 130px;
+}
 /* Responsive */
 @media screen and (max-width:770px) {
     body{
@@ -143,6 +197,22 @@ body{
     }
     .resultDiv{
         margin:60px 0px ;
+
+        flex-direction: column;
+        width: 300px;
+        height: fit-content;
+    }
+    .resultDivforcast{
+        flex-direction: column;
+    }
+    .forecast{
+        justify-content: flex-start;
+        -webkit-transition: height 2s ease;
+        -moz-transition: height 2s ease;
+        -o-transition: height 2s ease;
+        transition: height 2s ease;
+
+        height: fit-content;
     }
 }
 @media screen and (max-width:604px) {
