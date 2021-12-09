@@ -25,6 +25,7 @@ const lessResult = document.getElementById("lessresult");
 let resultDivForcast = document.createElement("div");
 
 let open = false;
+let errorC = true;
 
 const apiKey = "88013528b8f266e96b49b381e4b09d21";
 
@@ -142,16 +143,23 @@ lessResult.addEventListener('click' , () => lessforecast());
 // Get Weather
 async function getWeather(apiUrlforecast) {
   try {
+    if(errorC === false){
+      errorC = true;
+    }
     let response = await fetch(apiUrlforecast);
     objWeather = await response.json();
     console.log(objWeather);
     outputResult();
   } catch (error) {
     //Alert Error
-    resultDiv.style.display = "none";
     alert(`Please check your City name - "${input.value}"`);
     weatherLoader.hidden = false;
     loader.hidden = true;
+    if(errorC === true){
+      moreResult.hidden = true;
+      lessResult.hidden = true;
+    }    
+    return;
   }
 }
 
