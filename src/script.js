@@ -21,6 +21,7 @@ const img = document.createElement("img");
 
 const moreResult = document.getElementById("moreresult");
 const lessResult = document.getElementById("lessresult");
+const moreLess = document.getElementById('moreless');
 
 let resultDivForcast = document.createElement("div");
 
@@ -96,6 +97,8 @@ function lessforecast(){
 }
 //Results
 function outputResult() {
+  resultDiv.style.display = 'flex';
+  moreLess.hidden = false;
   if(open === false){
     moreResult.hidden = false;
     moreResult.classList.add("animate__animated", "animate__fadeInRight");
@@ -152,13 +155,13 @@ async function getWeather(apiUrlforecast) {
     outputResult();
   } catch (error) {
     //Alert Error
+    if(errorC === true){
+      resultDiv.style.display = 'none';
+      moreLess.hidden = true;
+    }  
     alert(`Please check your City name - "${input.value}"`);
     weatherLoader.hidden = false;
-    loader.hidden = true;
-    if(errorC === true){
-      moreResult.hidden = true;
-      lessResult.hidden = true;
-    }    
+    loader.hidden = true;  
     return;
   }
 }
