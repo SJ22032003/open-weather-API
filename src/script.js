@@ -43,6 +43,7 @@ function forecast() {
     lessResult.classList.add("animate__animated", "animate__fadeInRight");
   }, 500);
 
+  resultDiv.classList.remove('inputlessforecast');
   resultDiv.classList.add("forecast");
   result1.style.width = "190px";
 
@@ -88,6 +89,7 @@ function lessforecast(){
   resultDiv.classList.remove("forecast");
     lessResult.hidden = true;
   
+  resultDiv.classList.remove("forecast");
   resultDiv.classList.add('inputlessforecast');
   moreResult.hidden = false;
   setTimeout(()=> {
@@ -105,9 +107,11 @@ function outputResult() {
     open = true;
   }
   else{
+    moreResult.hidden = true;
     resultDivForcast.innerHTML = '';
+    resultDiv.classList.remove("forecast");
     forecast();
-    open = false;
+    // open = false;
   }
 
   weatherLoader.hidden = false;
